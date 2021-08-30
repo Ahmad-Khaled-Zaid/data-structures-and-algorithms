@@ -78,10 +78,13 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
-  let array =[];
-  array.array.forEach(element => {
-    
+  let array = [];
+  arr.forEach(element => {
+    let newArr = Math.pow(2, element);
+    array.push(newArr);
+
   });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,8 +94,13 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  newArray = arr.map(item => {
+    return Math.pow(2, item);
+  });
+  return newArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
