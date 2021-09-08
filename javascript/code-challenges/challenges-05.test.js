@@ -12,7 +12,13 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 
-const toLastNames = (people) => { }
+const toLastNames = (people) => {
+  let newArr = [];
+  people.map((element, i) => {
+    newArr[i] = `${element.firstName} ${element.lastName}`;
+  });
+  return newArr;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -59,11 +65,12 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  let totalElement = arr.reduce((accumulator, currentValue) => {
-    const arrLength = accumulator.currentValue.length;
-    return arrLength;
-  }, []);
-  return totalElement;
+  let newArr = arr.reduce((accumulator, value, index) => {
+    accumulator = index + 1;
+    return accumulator;
+  }, 0);
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,6 +132,12 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let newArr = arr.reduce((accumulator, item, i) => {
+    accumulator[i] = item.name;
+    return accumulator;
+  }, []);
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,6 +150,13 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  let newArr = str.split('');
+  let reverse = newArr.reduce((acc, element) => {
+    acc.unshift(element);
+    return acc;
+  }, []);
+  return reverse.join('');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
