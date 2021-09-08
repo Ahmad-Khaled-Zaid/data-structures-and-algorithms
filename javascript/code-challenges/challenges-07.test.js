@@ -53,6 +53,9 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  let newArr= arr.join(' ');
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,9 +72,13 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let newArr = [];
+  for (let i = 0; i <= str.length; i++) {
+    let Arr = str.slice(i);
+    newArr.push(Arr);
+  }
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,6 +91,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
+
 };
 
 
@@ -130,8 +139,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let Arr1 = recipe.ingredients[i].indexOf(' ', 3);
+    let Arr2 = recipe.ingredients[i].slice(Arr1);
+    result.push(Arr2.slice(1));
+  }
   return result;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
