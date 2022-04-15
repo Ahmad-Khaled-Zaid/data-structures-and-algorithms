@@ -216,16 +216,13 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
-  function Lax(name, effort, baseStat) {
-    this.name = name;
-    this.total = effort + baseStat;
-  }
-  const newArr = arr.map((value) => {
-    let Lax1 = new Lax(value.stat.name, value.effort, value.baseStat);
-    return Lax1;
+  const Array = arr.map((value) => {
+    return {
+      name: value.stat.name,
+      total: value.effort + value.baseStat,
+    };
   });
-  return newArr;
+  return Array;
 };
 
 /* ------------------------------------------------------------------------------------------------
