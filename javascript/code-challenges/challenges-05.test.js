@@ -339,6 +339,7 @@ const extractChildren = (arr) => {
     } else {
       return accumulator;
     }
+    // push the temp array to the final array
     for (let i = 0; i < tempArr.length; i++) {
       accumulator.push(tempArr[i]);
     }
