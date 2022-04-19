@@ -218,8 +218,15 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
- 
+  let object = arr.reduce(
+    (accumulator, currentValue) => {
+      accumulator.count += 1;
+      accumulator.sum += currentValue;
+      return accumulator;
+    },
+    { count: 0, sum: 0 }
+  );
+  return object.sum / object.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -241,6 +248,13 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((accumulator, currentValue) => {
+    if (isPrime(currentValue)) {
+      accumulator += 1;
+      return accumulator;
+    }
+    return accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -283,7 +297,14 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, currentValue) => {
+    if (currentValue.stat.name === statName) {
+      //  accumulator.assign(currentValue);
+      Object.assign(accumulator, currentValue);
+      return accumulator;
+    }
+    return accumulator;
+  }, {});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -297,7 +318,33 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  // filter the characters array
+  let filteredArray = arr.filter((element) => {
+    for (let i = 0; i < element.name.length; i++) {
+      if (element.name[i] === "a") {
+        return true;
+      }
+    }
+  });
+
+  let tempArr = []; // temporary array will hold the children array
+
+  // use the filters array to get the children arrays from children key
+  let reducedArray = filteredArray.reduce((accumulator, currentValue) => {
+    if (currentValue.children !== undefined) {
+      tempArr = currentValue.children.reduce((accumulator, currentValue) => {
+        accumulator.push(currentValue);
+        return accumulator;
+      }, []);
+    } else {
+      return accumulator;
+    }
+    for (let i = 0; i < tempArr.length; i++) {
+      accumulator.push(tempArr[i]);
+    }
+    return accumulator;
+  }, []);
+  return reducedArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -378,13 +425,13 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should return a count of the prime numbers in the array", () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should return any stats that match the input", () => {
     expect(extractStat("speed", snorlaxData.stats)).toStrictEqual({
       stat: { url: "https://pokeapi.co/api/v2/stat/6/", name: "speed" },
@@ -394,7 +441,7 @@ xdescribe("Testing challenge 10", () => {
   });
 });
 
-xdescribe("Testing challenge 11", () => {
+describe("Testing challenge 11", () => {
   test("It should return an array containing the names of the children", () => {
     expect(extractChildren(characters)).toStrictEqual([
       "Robb",
