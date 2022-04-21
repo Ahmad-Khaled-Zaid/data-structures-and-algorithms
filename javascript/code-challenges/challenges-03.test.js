@@ -7,7 +7,6 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  // Solution code here...
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
     newArr[i] = arr[i] + 2;
@@ -24,7 +23,6 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  // Solution code here...
   // return arr.filter((value) => !isNaN(value));
   return arr.filter((value) => typeof value === "number");
 };
@@ -38,7 +36,6 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
   return arr.filter((value) => value.indexOf("and") !== -1);
 };
 
@@ -51,7 +48,6 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
   return arr.filter((value) => value % 2);
 };
 
@@ -132,7 +128,6 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
   const array = arr.filter((value) => value.baseStat > minBaseStat);
   return array.map((value) => value.stat.name);
 };
@@ -187,7 +182,6 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
   return arr.filter((value) => value.children === undefined);
 };
 
@@ -200,7 +194,6 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
   return arr
     .filter((value) => typeof value === "number")
     .map((element) => {

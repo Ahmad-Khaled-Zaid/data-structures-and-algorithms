@@ -12,7 +12,6 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = (people) => {
-  // Solution code here...
   return people.map((value) => {
     return value.firstName + " " + value.lastName;
   });
@@ -26,7 +25,6 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
   return arr.reduce((accumulator, currentValue) => {
     return (accumulator += currentValue);
   }, 0);
@@ -45,7 +43,6 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
   return arr.reduce(
     (accumulator, currentValue) => (accumulator += currentValue.purchasePrice),
     0
@@ -61,7 +58,6 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
   return arr.reduce((accumulator) => (accumulator += 1), 0);
 };
 
@@ -142,7 +138,6 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
   let newArray = [];
   for (let i = str.length - 1; i >= 0; i--) {
     newArray.push(str[i]);
@@ -247,7 +242,6 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
   return arr.reduce((accumulator, currentValue) => {
     if (isPrime(currentValue)) {
       accumulator += 1;

@@ -9,7 +9,6 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  // Solution code here...
   const newArr = [];
   arr.forEach((value) => newArr.push(Math.pow(value, 3)));
   return newArr;
@@ -22,7 +21,6 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
   const newArr = arr.map((value) => value + 1);
   return newArr;
 };
@@ -34,7 +32,6 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Solution code here...
   const newArr = arr.map((value) => value + "?");
   return newArr;
 };
@@ -50,7 +47,6 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
     newArr.push(Math.pow(2, arr[i]));
@@ -65,7 +61,6 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
   const newArr = [];
   arr.forEach((value) => newArr.push(Math.pow(2, value)));
   return newArr;
@@ -78,7 +73,6 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
   const newArr = arr.map((value) => Math.pow(2, value));
   return newArr;
 };
@@ -94,7 +88,6 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
   const newArr = arr.map((value) => value.charCodeAt());
   return newArr;
 };
@@ -110,7 +103,6 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
   const newArr = arr.map((value) => {
     if (!isNaN(value)) {
       if (value % 2 === 0) {
@@ -167,7 +159,6 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
   const abilityArray = arr.map((value) => value.ability.name);
   return abilityArray;
 };
